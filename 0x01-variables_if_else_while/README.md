@@ -4,3 +4,7 @@ alx-low_level_programming
 2. I sometimes suffer from insomnia. And when I can't fall asleep,I play what I call the alphabet game(2-print_alphabet)
 3. alphABET(3-print_alphbets.c)
 4. When I was having that alphabet soup, I never thought that it would pay off(4-print_alphabt.c)
+5. Numbers(5-print_numbers.c)
+6. Numberz(6-print_numberz)
+7. Smile in the mirror(7-print_tebahpla.c)
+8. Hexadecimal(8-print_base16.c)
