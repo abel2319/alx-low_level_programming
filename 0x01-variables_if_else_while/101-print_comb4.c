@@ -22,7 +22,7 @@ int main(void)
 				putchar(i);
 				putchar(j);
 				putchar(n);
-				if (n < 58)
+				if ((n < 58) && (i < 55))
 				{
 					putchar(',');
 					putchar(' ');
