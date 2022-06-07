@@ -6,7 +6,7 @@
 *
 * Return: Always nothing (Success)
 */
-void print-alphabet(void)
+void print_alphabet(void)
 {
 	int c = 97;
 	int i = 0;
