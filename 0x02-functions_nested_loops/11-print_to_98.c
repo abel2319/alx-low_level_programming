@@ -63,10 +63,19 @@ void when_three_digit1(int *n)
 			i = (*n - t - j);
 			_putchar((i / 100) + '0');
 		}
-		_putchar((t / 10) + '0');
-		_putchar(j + '0');
-		_putchar(',');
-		_putchar(' ');
+		if (*n < 10)
+		{
+			_putchar(j + '0');
+			_putchar(',');
+			_putchar(' ');
+		}
+		else
+		{
+			_putchar((t / 10) + '0');
+			_putchar(j + '0');
+			_putchar(',');
+			_putchar(' ');
+		}
 		(*n)--;
 	}
 }
