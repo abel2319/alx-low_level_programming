@@ -24,20 +24,6 @@ void times_table(void)
 			{
 				c = t % 10;
 				_putchar(c + '0');
-				if ((i != 9) && (j * (i + 1) < 10))
-				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
-				}
-				else if (j * (i + 1) >= 10)
-				{
-					if (i != 9)
-					{
-						_putchar(',');
-						_putchar(' ');
-					}
-				}
 			}
 			else
 			{
@@ -45,13 +31,19 @@ void times_table(void)
 				m = (t - c) / 10;
 				_putchar(m + '0');
 				_putchar(c + '0');
-				if (i != 9)
-				{
-					_putchar(',');
-					_putchar(' ');
-				}
-
 			}
+			if ((i != 9) && (j * (i + 1) < 10))
+			{
+				_putchar(',');
+				_putchar(' ');
+				_putchar(' ');
+			}
+			else if ((i != 9) && (j * (i + 1) >= 10))
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
+
 			i++;
 		}
 		_putchar('\n');
