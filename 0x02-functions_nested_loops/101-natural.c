@@ -18,7 +18,7 @@ int main(void)
 
 	for (i = 0; i < 1024; i++)
 	{
-		if ((i % 3) ==0 || (i % 5) == 0)
+		if ((i % 3) == 0 || (i % 5) == 0)
 			sum = sum + i;
 	}
 	n1 = sum % 100000;
@@ -31,5 +31,6 @@ int main(void)
 	_putchar((n3 - n4) / 100 + '0');
 	_putchar((n4 - (sum % 10)) / 10 + '0');
 	_putchar((sum % 10) + '0');
+	_putchar('\n');
 	return (0);
 }
