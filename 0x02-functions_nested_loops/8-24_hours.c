@@ -24,7 +24,7 @@ void jack_bauer(void)
 				t = 0;
 				while (t <= 9)
 				{
-					_putchar(j +'0');
+					_putchar(j + '0');
 					_putchar(i + '0');
 					_putchar(':');
 					_putchar(c + '0');
@@ -35,7 +35,7 @@ void jack_bauer(void)
 				c++;
 			}
 			i++;
-			if (j == 2 && i==4)
+			if (j == 2 && i == 4)
 				break;
 		}
 	}
