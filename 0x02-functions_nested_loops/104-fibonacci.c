@@ -1,42 +1,28 @@
 #include <stdio.h>
-#include "main.h"
 
 /**
- * printFibo - Entry to code
- * @n : the number of terms
+ * main - fibonacci 50
  *
- * Return : Always Nothings (Success)
+ *
+ * Return:  (Success)
  */
-void printFibo(int n)
-{
-	int f1 = 0
-	int f2 = 1
-	int i = 0;
-	int next = 0;
 
-	for (i = 1; i < n; i++) {
-		printf("%d ", f2);
-		if (f2 < 10)
-		{
-			_putchar(f2 +'0');
-			_putchar(',');
-			_putchar(' ');
-		}
-		else if ((f2 > 10) && (f2 < 100))
+int main(void)
+{
+	unsigned long int i;
+	unsigned long int f1 = 1;
+	unsigned long int f2 = 2;
+	unsigned long int next = 0;
+
+	printf("%lu", f1);
+
+	for (i = 1; i < 98; i++)
+	{
+		printf(", %lu", f2);
 		next = f1 + f2;
 		f1 = f2;
 		f2 = next;
 	}
+	printf("\n");
+	return (0);
 }
-
-/**
- * main - Entry to code
- *
- * Return : Always 0 (Success)
- */
-int main(void)
-{
-	printFibo(98);
-	return 0;
-}
-
