@@ -45,7 +45,7 @@ void for_betty(int i, int n, int j)
 	int c = 0;
 	int l = 0;
 
-	while (i <= 12)
+	while (i <= n)
 	{
 		t = j * i;
 		if (t < 10)
@@ -81,7 +81,7 @@ void for_betty(int i, int n, int j)
 */
 void print_times_table(int n)
 {
-	if ((n > 0) && (n < 15))
+	if ((n >= 0) && (n <= 15))
 	{
 	int i = 0;
 	int j = 0;
