@@ -9,7 +9,6 @@
 
 int main(void)
 {
-	unsigned long int i;
 	unsigned long int f1 = 1;
 	unsigned long int f2 = 2;
 	unsigned long int next = 0;
