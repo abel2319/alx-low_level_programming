@@ -16,7 +16,7 @@ int main(void)
 
 	printf("%lu", f1);
 
-	for (i = 1; i < 98; i++)
+	for (i = 1; i <= 98; i++)
 	{
 		printf(", %lu", f2);
 		next = f1 + f2;
