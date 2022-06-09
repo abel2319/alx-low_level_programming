@@ -1,10 +1,11 @@
 #include "main.h"
 
 /**
- *_isupper - Entry to code
- *@c : variable whose we verify if ti is uppercase
+ *mul - Entry to code
+ *@a : fisrt variable for multiplication
+ *@b : second variable
  *
- * Return: Always 0 or 1 (Success)
+ * Return: Always a * b  (Success)
  */
 int mul(int a, int b)
 {
