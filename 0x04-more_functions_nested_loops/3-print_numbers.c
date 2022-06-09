@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- *_isupper - Entry to code
+ *print_numbers - Entry to code
  *
  * Return: Always nothing (Success)
  */
