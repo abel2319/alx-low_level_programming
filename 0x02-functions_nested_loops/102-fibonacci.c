@@ -20,8 +20,8 @@ int main(void)
 	{
 		printf(", %lu", f2);
 		next = f1 + f2;
-        	f1 = f2;
-        	f2 = next;
+		f1 = f2;
+		f2 = next;
 	}
 	printf("\n");
 	return (0);
