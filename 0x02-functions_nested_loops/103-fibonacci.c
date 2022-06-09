@@ -14,9 +14,7 @@ int main(void)
 	unsigned long int next = 0;
 	unsigned long int sum = 0;
 
-	printf("%lu", f1);
-
-	while (f2 <= 4000000)
+	while (f2 < 4000000)
 	{
 		if (f2 % 2 == 0)
 			sum += f2;
