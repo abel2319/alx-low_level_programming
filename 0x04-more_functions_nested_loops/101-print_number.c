@@ -25,7 +25,7 @@ void when_three_digit(int n)
 
 
 /**
-*when_three_digit1 - Entry to code
+*when_four_digit - Entry to code
 *
 * @n : first integer
 *
@@ -60,6 +60,7 @@ void print_number(int n)
 {
 	int j = 0;
 	int t = 0;
+
 	if (n < 0)
 	{
 		_putchar('-');
