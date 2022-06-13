@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * swap_int(int *a, int *b)
+ * swap_int - Entry to code
  * @a: first pointeur
  * @b: second pointeur
  *
