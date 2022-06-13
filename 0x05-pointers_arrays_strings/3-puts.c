@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 
 /**
  *_puts - Entry code
@@ -15,7 +16,7 @@ void _puts(char *str)
 	{
 		j++;
 		_putchar(i);
-		i = *(s + j);
+		i = *(str + j);
 	}
 	_putchar('\n');
 }
