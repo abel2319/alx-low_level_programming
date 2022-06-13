@@ -16,14 +16,14 @@ void print_rev(char *s)
 		j++;
 		i = *(s + j);
 	}
-
-	while (j != 0)
-	{
-		j--;
-		_putchar(i);
-		i = *(s + j);
-		if (j == 0)
+	if (j !=0)
+		while (j != 0)
+		{
+			j--;
 			_putchar(i);
-	}
+			i = *(s + j);
+			if (j == 0)
+				_putchar(i);
+		}
 	_putchar('\n');
 }
