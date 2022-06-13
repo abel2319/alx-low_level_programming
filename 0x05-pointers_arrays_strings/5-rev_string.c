@@ -26,6 +26,12 @@ void rev_string(char *s)
 			s[t] = s[j - t];
 			s[j - t] = i;
 			t++;
+			if ((j % 2 == 1) && (t == (j / 2)))
+			{
+				i = s[t];
+				s[t] = s[j - t];
+				s[j - t] = i;
+			}
 		}
 	}
 }
