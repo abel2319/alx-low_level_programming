@@ -8,14 +8,14 @@
  *
  * Return: Always nothing (Success)
  */
-void print_array(int *a, int n);
+void print_array(int *a, int n)
 {
 	int j = 1;
 
 	printf("%d", a[0]);
 	while (j < n)
 	{
-		printf(", %d", a[j]
+		printf(", %d", a[j]);
 	}
 	printf("\n");
 }
