@@ -19,11 +19,13 @@ void print_rev(char *s)
 
 	i = s[j];
 
-	while (j != -1)
+	while (j != 0)
 	{
 		_putchar(i);
 		j--;
 		i = *(s + j);
+		if (j == 0)
+			_putchar(i);
 	}
 	_putchar('\n');
 }
