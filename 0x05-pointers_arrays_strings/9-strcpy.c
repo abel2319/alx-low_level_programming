@@ -21,12 +21,14 @@ char *_strcpy(char *dest, char *src)
 	if (j != 0)
 	{
 		while (t != j)
+		{
 			dest[t] = src[t];
 			t++;
 			if (t  == j)
 			{
 				dest[t] = src[t];
 			}
+		}
 	}
 	return (dest);
 }
