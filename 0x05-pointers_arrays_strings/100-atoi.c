@@ -11,31 +11,31 @@ int int_value(char t)
 {
 	if (t == '0')
 		return (0);
-	
+
 	if (t == '1')
 		return (1);
-	
+
 	if (t == '2')
 		return (2);
-	
+
 	if (t == '3')
 		return (3);
-	
+
 	if (t == '4')
 		return (4);
-	
+
 	if (t == '5')
 		return (5);
-	
+
 	if (t == '6')
 		return (6);
-	
+
 	if (t == '7')
 		return (7);
-	
+
 	if (t == '8')
 		return (8);
-	
+
 	if (t == '9')
 		return (9);
 	return (0);
@@ -67,7 +67,7 @@ int pw_of_ten(int n)
  */
 int _atoi(char *s)
 {
-	char i = s[0];
+	char i = *(s + 0);
 	int j = 0;
 	int t = 0;
 	int n = 0;
@@ -89,14 +89,14 @@ int _atoi(char *s)
 		i = *(s + j);
 	}
 	stop = j;
-	while (s[j] >= '0' && s[j] <= '9')
+	while (*(s + j) >= '0' && *(s + j) <= '9')
 	{
 		n++;
 		j++;
 	}
 	while (n != 0)
 	{
-		rtn += (int_value(s[stop]) * pw_of_ten(n));
+		rtn += (int_value(*(s + stop)) * pw_of_ten(n));
 		stop++;
 		n--;
 	}
