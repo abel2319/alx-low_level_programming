@@ -15,6 +15,8 @@ char *cap_string(char *str)
 	while (str[i] != '\0')
 	{
 		j = 0;
+		if (str[i] == '\t')
+			str[i] = ' ';
 		while (delimeters[j] != '\0')
 		{
 			if ((str[i] == delimeters[j]) && (str[i + 1] >= 97 && str[i + 1] <= 122))
