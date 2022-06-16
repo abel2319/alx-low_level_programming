@@ -11,12 +11,10 @@ char *cap_string(char *str)
 	char delimeters[] = " \t\n,;.!?\"(){}";
 
 	if (str[0] >= 97 && str[i] <= 122)
-	       str[0] -=32;
+		str[0] -= 32;
 	while (str[i] != '\0')
 	{
 		j = 0;
-		if (str[i] == '\t')
-			str[i] = ' ';
 		while (delimeters[j] != '\0')
 		{
 			if ((str[i] == delimeters[j]) && (str[i + 1] >= 97 && str[i + 1] <= 122))
