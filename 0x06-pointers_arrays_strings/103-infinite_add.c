@@ -40,26 +40,6 @@ int int_value(char n)
  *
  * Return: Nothing (Success)
  */
-/*void int_sum(int i, int j, int size_r, char *r, char *n1, char *n2)
-{
-	int m1 = '0';
-	int m2 = '0';
-	int rest = '0';
-	int l = 0;
-	int t = 0;
-
-	r[]
-	for (t = j, l = i; t >= 0 ; t--, l--)
-	{
-		if (t >= i)
-			m1 = '0';
-		else
-			m1 = int_value(n1[l]);
-		m2 = int_value(n2[t]);
-		r[t] = (((m1 + m2) % 10) + rest) + '0';
-		rest = ((m1 + m2) / 10;
-	}
-}*/
 void int_sum(int i, int j, int size_r, char *r, char *n1, char *n2)
 {
 	int m1 = 0;
@@ -70,14 +50,14 @@ void int_sum(int i, int j, int size_r, char *r, char *n1, char *n2)
 	int n = size_r - 2;
 
 	r[size_r - 1] = '\0';
-	for (t = j-1, l = i-1, n = size_r-2; t >= 0 ; t--, l--, n--)
+	for (t = j - 1, l = i - 1, n = size_r - 2; t >= 0 ; t--, l--, n--)
 	{
 		if (l < 0)
 			m1 = 0;
 		else
 			m1 = int_value(n1[l]);
 		m2 = int_value(n2[t]);
-		if (((m1 + m2)%10 +rest) == 10)
+		if (((m1 + m2) % 10 + rest) == 10)
 		{
 			r[n] = '0';
 			rest = 1;
@@ -117,7 +97,9 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	int n = size_r;
 
 	if (r == NULL || size_r <= 0)
+	{
 		return (0);
+	}
 	else
 	{
 		for (i = 0; n1[i] != '\0'; i++)
