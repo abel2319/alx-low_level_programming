@@ -1,10 +1,9 @@
 /**
- * _memcpy - Entry to code
- * @dest: where we want to copy
- * @src: where we copy
- * @n: number of bytes
+ * _strchr - Entry to code
+ * @s: where we llooking for
+ * @c: what we looking for
  *
- * Return: Always s (Success)
+ * Return: Always first occurence of c (Success)
  */
 char *_strchr(char *s, char c)
 {
@@ -13,5 +12,5 @@ char *_strchr(char *s, char c)
 	for (i = 0; s[i] != '\0'; i++)
 		if (s[i] == c)
 			return (s + i);
-	return (NULL);
+	return (0);
 }
