@@ -1,5 +1,5 @@
 /**
- * _strchr - Entry to code
+ * _strspn - Entry to code
  * @s: where we llooking for
  * @accept: what we looking for
  *
