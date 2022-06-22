@@ -2,7 +2,7 @@
 
 /**
  *_puts_recursion - print a string using only _putchar
- *@s: string to print
+ *@s: string to print in stdout
  *
  * Return: Nothing
  */
