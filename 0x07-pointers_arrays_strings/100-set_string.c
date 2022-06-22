@@ -5,6 +5,6 @@
  */
 void set_string(char **s, char *to)
 {
-	if (test1)
+	if (*s)
 		to = *s;
 }
