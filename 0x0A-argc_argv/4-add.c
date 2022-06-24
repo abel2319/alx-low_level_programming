@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * main - Print the executable name using argv
@@ -18,8 +19,8 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i< argc; i++)
 		{
-			if (argv[i] >= '0' && argv[i] <= '9')
-				sum += agrv[i];
+			if (atoi(argv[i]))
+				sum += atoi(argv[i]);
 			else
 				break;
 		}
