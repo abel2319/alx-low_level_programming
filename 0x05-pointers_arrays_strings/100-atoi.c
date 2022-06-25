@@ -94,13 +94,16 @@ int _atoi(char *s)
 		n++;
 		j++;
 	}
+	j = n;
 	while (n != 0)
 	{
-		rtn += (int_value(*(s + stop)) * pw_of_ten(n));
+		if (j == n)
+			rtn += -(int_value(*(s + stop) * pw_of_ten(n)) / 10;
+		rtn += -(int_value(*(s + stop)) * pw_of_ten(n));
 		stop++;
 		n--;
 	}
 	if (t % 2 == 1)
-		return (-rtn / 10);
-	return (rtn / 10);
+		return (rtn / 10);
+	return (-rtn / 10);
 }
