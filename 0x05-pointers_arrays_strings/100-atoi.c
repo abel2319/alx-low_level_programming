@@ -97,8 +97,8 @@ int _atoi(char *s)
 	while (n != 0)
 	{
 		if (j == n)
-			rtn += -(int_value(*(s + stop) * pw_of_ten(n-1)) / 10);
-		rtn += -(int_value(*(s + stop)) * pw_of_ten(n-1));
+			rtn += -(int_value(*(s + stop) * pw_of_ten(n - 1)) / 10);
+		rtn += -(int_value(*(s + stop)) * pw_of_ten(n - 1));
 		stop++;
 		n--;
 	}
