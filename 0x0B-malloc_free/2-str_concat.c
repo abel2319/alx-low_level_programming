@@ -13,7 +13,7 @@ void to_concat(int i, int j, char *s1, char *s2, char **ptr)
 	int t = 0;
 
 	(*ptr) = malloc(sizeof(char) * (i + j + 1));
-	if (ptr)
+	if (*ptr)
 	{
 		for (t = 0; t <= (i + j - 1); t++)
 		{
@@ -43,11 +43,10 @@ char *str_concat(char *s1, char *s2)
 	char *ptr = NULL;
 	int i = 0;
 	int j = 0;
-	char *rtn = '\0';
 
 	if (s1 == NULL && s2 == NULL)
-		return (rtn);
-	if (s1 != NULL && s2 != NULL)
+		to_concat(0, 0, '\0', '\0', &ptr);
+	else if (s1 != NULL && s2 != NULL)
 	{
 		for (i = 0; s1[i] != '\0'; i++)
 			;

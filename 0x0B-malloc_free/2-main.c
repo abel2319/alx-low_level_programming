@@ -21,7 +21,7 @@ int main(void)
 	}
 	printf("%s\n", s);
 	free(s);
-/*
+
     s = str_concat(NULL, "Hello");
 	if (s == NULL)
 	{
@@ -38,7 +38,7 @@ int main(void)
 		return (1);
 	}
 	printf("%s\n", s);
-	free(s);*/
+	free(s);
 
 	return (0);
 }
