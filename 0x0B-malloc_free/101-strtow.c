@@ -22,7 +22,7 @@ void failed(int count, char **ptr)
  * @ptr: grid
  *
  */
-void fill(int i, int j, char str, char **ptr)
+void fill(int i, int j, char *str, char **ptr)
 {
 	int t = 0;
 
