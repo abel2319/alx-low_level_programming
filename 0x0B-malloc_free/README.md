@@ -4,3 +4,4 @@ a function that returns a pointer to a newly allocated space in memory, which co
 a function that concatenates two strings.(2-str_concat.c)
 a function that returns a pointer to a 2 dimensional array of integers.(3-alloc_grid.c)
 a function that frees a 2 dimensional grid.(4-free_grid.c)
+a function that concatenates all the arguments of your program.(100-argstostr.c)
