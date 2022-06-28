@@ -75,4 +75,5 @@ char **strtow(char *str)
 		}
 
 	}
+	return (ptr);
 }
