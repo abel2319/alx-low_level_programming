@@ -22,20 +22,22 @@ void failed(int count, char **ptr)
  * @ptr: grid
  *
  */
-void fill(int i, int j, char *str, char **ptr)
+void fill(int i, int j, char *str, char *ptr)
 {
 	int t = 0;
+	int n = i - j;
 
-	for (t = (i - j); t <= i; t++)
+	for (t = 0; t <= j; t++)
 	{
-		if (str[i + 1] == '\0')
-			(*ptr)[i + 1] = '\0';
-		else if (str[t] == ' ')
-			(*ptr)[t] = '\0';
+		if (str[i] == '\0')
+			ptr[j] = '\0';
+		else if (str[n + t] == ' ')
+			ptr[t] = '\0';
 		else
-			(*ptr)[t] = str[t];
+			ptr[t] = str[n + t];
 	}
 }
+
 /**
  *strtow - split a string into words(using spaces as delimiter)
  *@str: string to split
@@ -46,32 +48,52 @@ void fill(int i, int j, char *str, char **ptr)
 char **strtow(char *str)
 {
 	char **ptr = NULL;
-	int i = 0, j = 0, nbr_words = 1, count = 0;
+	int i = 0, j = 0, nbr_words = 0, count = 0, t = 0;
 
 	if (str != NULL || *str != '\0')
 	{
 		for (i = 0; str[i] != '\0'; i++)
-			if (str[i] == ' ' && str[i + 1] != '\0')
+		{
+			if (str[i] != ' ')
 				nbr_words++;
+			while (str[i] != ' ')
+			{
+				if (str[i + 1] == '\0')
+					break;
+				i++;
+			}
+		}
+		if (nbr_words == 0)
+			return (NULL);
 		ptr = malloc(sizeof(char *) * nbr_words);
 		if (ptr)
 		{
 			for (i = 0; str[i] != '\0'; i++)
 			{
-				j++;
-				if (str[i] == ' ' || str[i + 1] == '\0')
+				if (str[i] != ' ' || str[i + 1] == '\0')
 				{
+					while (str[i] != ' ')
+					{
+						if (str[i + 1] == '\0')
+                                                        break;
+						j++;
+						i++;
+					}
+					if (j != 0)
+					{
 					ptr[count] = malloc(sizeof(char) * (j + 1));
 					if (!ptr[count])
 					{
 						failed(count, ptr);
 						return (NULL);
 					}
-					fill(i, j, str, ptr);
+					fill(i, j, str, *(ptr + count));
 					j = 0;
 					count++;
+					}
 				}
 			}
+			ptr[count] = NULL;
 		}
 
 	}
