@@ -25,7 +25,7 @@ char **allocate(char *str)
 	}
 	if (nbr_words == 0)
 		return (NULL);
-	ptr = malloc(sizeof(char *) * nbr_words);
+	ptr = malloc(sizeof(char *) * (nbr_words + 1));
 	return (ptr);
 }
 
@@ -98,7 +98,7 @@ char **strtow(char *str)
 					}
 					if (j != 0)
 					{
-					ptr[count] = malloc(sizeof(char) * (j + 2));
+					ptr[count] = malloc(sizeof(char) * (j + 1));
 					if (!ptr[count])
 					{
 						failed(count, ptr);
