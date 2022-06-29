@@ -1,4 +1,34 @@
 #include <stdlib.h>
+
+/**
+ * allocate - To allocate memory to the grid
+ * @str: where we take the number of words
+ *
+ * Return: pointer to the new grid or NULL
+ */
+char **allocate(char *str)
+{
+	char **ptr = NULL;
+	int i = 0;
+	int nbr_words = 0;
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		if (str[i] != ' ')
+			nbr_words++;
+		while (str[i] != ' ')
+		{
+			if (str[i + 1] == '\0')
+				break;
+			i++;
+		}
+	}
+	if (nbr_words == 0)
+		return (NULL);
+	ptr = malloc(sizeof(char *) * nbr_words);
+	return (ptr);
+}
+
 /**
  * failed - to free which were allocate
  *@count: nbr of lines allocated
@@ -48,24 +78,11 @@ void fill(int i, int j, char *str, char *ptr)
 char **strtow(char *str)
 {
 	char **ptr = NULL;
-	int i = 0, j = 0, nbr_words = 0, count = 0, t = 0;
+	int i = 0, j = 0, count = 0;
 
 	if (str != NULL || *str != '\0')
 	{
-		for (i = 0; str[i] != '\0'; i++)
-		{
-			if (str[i] != ' ')
-				nbr_words++;
-			while (str[i] != ' ')
-			{
-				if (str[i + 1] == '\0')
-					break;
-				i++;
-			}
-		}
-		if (nbr_words == 0)
-			return (NULL);
-		ptr = malloc(sizeof(char *) * nbr_words);
+		ptr = allocate(str);
 		if (ptr)
 		{
 			for (i = 0; str[i] != '\0'; i++)
@@ -74,10 +91,10 @@ char **strtow(char *str)
 				{
 					while (str[i] != ' ')
 					{
-						if (str[i + 1] == '\0')
-                                                        break;
-						j++;
-						i++;
+					if (str[i + 1] == '\0')
+						break;
+					j++;
+					i++;
 					}
 					if (j != 0)
 					{
