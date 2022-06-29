@@ -98,6 +98,8 @@ char **strtow(char *str)
 					}
 					if (j != 0)
 					{
+					if (j == 1)
+						j++;
 					ptr[count] = malloc(sizeof(char) * (j + 1));
 					if (!ptr[count])
 					{
