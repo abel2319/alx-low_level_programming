@@ -25,7 +25,7 @@ char **allocate(char *str)
 	}
 	if (nbr_words == 0)
 		return (NULL);
-	ptr = malloc(sizeof(char *) * (nbr_words + 1));
+	ptr = malloc(sizeof(char *) * (nbr_words + 2));
 	return (ptr);
 }
 
