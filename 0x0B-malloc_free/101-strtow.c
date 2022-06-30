@@ -48,7 +48,7 @@ void failed(int count, char **ptr)
  * fill - fill each line
  * @i: where we are in str
  * @j: size of the words
- * @n: solve allocate problem
+ * @m: solve allocate problem
  * @str: string
  * @ptr: grid
  *
@@ -56,9 +56,9 @@ void failed(int count, char **ptr)
 void fill(int i, int j, int *m, char *str, char *ptr)
 {
 	int t = 0, n = 0;
-	
-	if (j == 2 && *m == 1)
-		j = *m;
+
+	if (j == 2 && *m == 2)
+		j = 1;
 	n = i - j;
 	for (t = 0; t <= j; t++)
 	{
@@ -101,16 +101,13 @@ char **strtow(char *str)
 					}
 					if (j != 0)
 					{
+					if (j == 1)
+						j = t = 2;
 					ptr[count] = (char *)malloc(sizeof(char) * (j + 1));
 					if (!ptr[count])
 					{
 						failed(count, ptr);
 						return (NULL);
-					}
-					if (j == 1)
-					{
-						j++;
-						t = 1;
 					}
 					fill(i, j, &t, str, *(ptr + count));
 					j = 0;
