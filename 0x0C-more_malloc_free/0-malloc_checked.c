@@ -1,4 +1,4 @@
-#include < stdlib.h>
+#include <stdlib.h>
 
 /**
  * malloc_checked - allocate memory using a size past as argument
@@ -9,13 +9,15 @@
  */
 void *malloc_checked(unsigned int b)
 {
-	void *ptr = 98;
+	void *ptr = NULL;
 
 	if (b != 0)
 	{
 		ptr = malloc(b);
 		if (!ptr)
-			return (98);
+			exit(98);
 	}
+	else
+		exit(98);
 	return (ptr);
 }
