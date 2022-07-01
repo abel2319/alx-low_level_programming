@@ -14,7 +14,7 @@ void *malloc_checked(unsigned int b)
 	if (b != 0)
 	{
 		ptr = malloc(b);
-		if(!ptr)
+		if (!ptr)
 			return (98);
 	}
 	return (ptr);
