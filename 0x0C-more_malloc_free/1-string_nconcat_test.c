@@ -11,16 +11,22 @@
 void to_concat(int i, int j, char *s1, char *s2, char **ptr)
 {
 	int t = 0;
-	int n = 0;
 
 	(*ptr) = malloc(sizeof(char) * (i + j + 1));
 	if (*ptr)
 	{
-		for (n = 0; s1[n] != '\0'; n++)
-			(*ptr)[n] = s1[n];
-		for (t = 0; t < j; t++)
-			(*ptr)[n + t] = s2[t];
-		(*ptr)[n + t] = '\0';
+		for (t = 0; t <= (i + j - 1); t++)
+		{
+			if (t <= i)
+			{
+				if (t == i)
+					(*ptr)[t] = s2[0];
+				else
+					(*ptr)[t] = s1[t];
+			}
+			else
+				(*ptr)[t] = s2[t - i];
+		}
 	}
 }
 
