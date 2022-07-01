@@ -1,7 +1,7 @@
 #include <stdlib.h>
 
 /**
- * malloc_checked - allocate memory using a size past as argument
+ * _calloc - allocate memory using a size past as argument
  * @nmemb: nbr of elements
  * @size: size pf each element
  *
@@ -16,11 +16,9 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
-	
+
 	ptr = malloc(nmemb * size);
-	if (!ptr)
-		return (NULL);
-	else
+	if (ptr)
 		for (i = 0; i < (int)(nmemb * size); i++)
 			*((char *)ptr + i) = 0;
 	return (ptr);
