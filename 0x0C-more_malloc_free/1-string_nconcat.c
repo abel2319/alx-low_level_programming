@@ -39,8 +39,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	int i = 0;
 	int j = 0;
 
-	if (n == 0)
-		return (NULL);
 	if (s1 == NULL && s2 == NULL)
 		to_concat(0, 0, '\0', '\0', &ptr);
 	else if (s1 != NULL && s2 != NULL)
