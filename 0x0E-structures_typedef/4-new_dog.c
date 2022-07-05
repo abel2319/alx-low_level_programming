@@ -25,12 +25,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (ptr_dog)
 	{
 		ptr_dog->name = malloc(sizeof(char) * i);
-		if (ptr_dog)
+		if (ptr_dog->name)
 		{
 			for (t = 0; t <= i; t++)
 				ptr_dog->name[t] = name[t];
 			ptr_dog->owner = malloc(sizeof(char) * j);
-			if (ptr_dog)
+			if (ptr_dog->owner)
 				for (t = 0; t <= j; t++)
 					ptr_dog->owner[t] = owner[t];
 			else
