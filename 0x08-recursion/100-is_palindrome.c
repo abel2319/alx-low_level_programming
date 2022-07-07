@@ -1,7 +1,24 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- *palindrome_checked - calcul the square rooti of a number
+ *return_size - calcul size of s
+ *@s: number
+ *@j: to store size
+ *
+ * Return: size of s
+ */
+int return_size(char *s, int j)
+{
+	if (s[j] != '\0')
+		return (1 + return_size (s, (j + 1));
+	else
+		return (1);
+	return (j);
+}
+
+/**
+ *palindrome_checked - verifies
  *@s: number
  *@i: to research
  *@j: to move
@@ -18,20 +35,19 @@ int palindrome_checked(char *s, int i, int j)
 }
 
 /**
- *is_palindrome - veerify if s is a palidrome
+ *is_palindrome - verify if s is a palidrome
  *@s: number
  *
  * Return: 1 if it is, 0 otherwise
  */
-int is_palindrome(char *s)
+void is_palindrome(char *s)
 {
 	int i = 0;
 	int j = 0;
 
 	if (s == 0 || *s == '\0')
 		return (0);
-	for (i = 0; s[i] != '\0'; i++)
-		;
-	return (palindrome_checked(s, i - 1, j));
+	i = return_size(s, j);
+	return (palindrome_checked(s, i, j));
 }
 
