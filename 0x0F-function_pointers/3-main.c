@@ -24,13 +24,13 @@ int main(int argv, char *args[])
 	if (atoi(args[3]) == 0 && (*args[2] == '/' || *args[2] =='%'))
 	{
 		printf("Error\n");
-		exit(99);
+		exit(100);
 	}
 	func = (*get_op_func)(args[2]);
 	if (args[2][1] != '\0' || func == NULL)
 	{
 		printf("Error\n");
-		exit(100);
+		exit(99);
 	}
 	printf("%d\n", func(atoi(args[1]), atoi(args[3])));
 	return (0);
