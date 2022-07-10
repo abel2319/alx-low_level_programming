@@ -1,5 +1,6 @@
 #include <stdarg.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * print_numbers - variadic function which print all past in parametres
