@@ -3,7 +3,7 @@
 
 /**
  * list_len - count the number of nodes in a list
- * @n: first elt of the list
+ * @h: first elt of the list
  *
  * Return: the size of the list or 0
  */
