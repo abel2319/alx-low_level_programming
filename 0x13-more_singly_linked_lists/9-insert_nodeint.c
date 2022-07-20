@@ -1,9 +1,9 @@
 #include "lists.h"
 
 /**
- * add_nodeint - add a new node to the head of list *head
+ * add_nodeint2 - add a new node to the head of list *head
  * @head: the head of old list
- * @n: int for the new node
+ * @new: the new node
  *
  * Return: the address of new node
  * Or NULL if so;ethings failed
