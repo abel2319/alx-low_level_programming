@@ -5,17 +5,17 @@
  * @head: address of header of list
  *
  */
-void free_listint2(listint_t *head)
+void free_listint2(listint_t **head)
 {
 	listint_t *tmp1, *tmp2;
 
-	if (head)
+	if (*head)
 	{
-		if (head->next == NULL)
-			free(head);
+		if ((*head)->next == NULL)
+			free(*head);
 		else
 		{
-			tmp1 = head;
+			tmp1 = *head;
 			tmp2 = tmp1->next;
 			while (tmp2)
 			{
