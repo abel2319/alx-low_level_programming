@@ -11,15 +11,18 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	ssize_t n;
 	int file;
-	char buf[BUFSIZ];
+	char *buf;
 
+	buf = malloc(sizeof(char) * letters);
+	if (!buf)
+		return (0);
 	file = open(filename, O_RDONLY, 0);
 	if (file && filename)
 	{
-		n = read(file, buf, letters);
+		n = read(file, buf, sizeof(char) * letters);
 		if (n)
 		{
-    			n = write(stdout, buf, n);
+    			n = write(STDOUT_FILENO, buf, n);
     			if (n <= 0)
 			{
 				n = 0;
