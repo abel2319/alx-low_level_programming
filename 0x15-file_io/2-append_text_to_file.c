@@ -1,36 +1,31 @@
 #include "main.h"
 
 /**
- * create_file - create a file with 600 as permission
+ * append_text_to_file - append text to a file
  * @filename: name of file
- * @text_content: content of file
+ * @text_content: text to add
  *
  * Return: 1 Success
  * otherwise -1
  */
-int create_file(const char *filename, char *text_content)
+int append_text_to_file(const char *filename, char *text_content)
 {
 	int op, wr, i;
 
 	if (filename == NULL)
 		return (-1);
+	op = open(filename, O_WRONLY | O_APPEND);
 	if (text_content)
 		for (i = 0; text_content[i]; i++)
 			;
-	else
+	else if(filename == NULL || op == -1)
 		return (-1);
-
-	op = open(filename, O_RDONLY | O_RDWR | O_TRUNC, 0600);
-	if (op == -1)
-		return (-1);
-
 	wr = write(op, text_content, i);
 	if (wr == -1)
 	{
 		close(op);
 		return (-1);
 	}
-
 	close(op);
 	return (1);
 }
