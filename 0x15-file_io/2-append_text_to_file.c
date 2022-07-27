@@ -18,8 +18,10 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (text_content)
 		for (i = 0; text_content[i]; i++)
 			;
-	else if(filename == NULL || op == -1)
+	else if (filename == NULL || op == -1)
 		return (-1);
+	else if (filename != NULL)
+		return (1);
 	wr = write(op, text_content, i);
 	if (wr == -1)
 	{
