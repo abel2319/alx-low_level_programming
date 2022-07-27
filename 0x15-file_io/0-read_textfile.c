@@ -13,8 +13,17 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	char buf[BUFSIZ];
 
 	file = open(filename, O_RDONLY, 0)
-	if (file)
-		if ((n = read(file, buf, letters)))
-    			write(stdout, buf, n);
+	if (file && filename)
+	{
+		if (n = read(file, buf, letters))
+		{
+    			if (write(stdout, buf, n))
+				;
+			else
+				close(file);
+		}
+		else
+			close(file);
+	}
 	return (n)
 }
