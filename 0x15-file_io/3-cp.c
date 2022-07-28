@@ -17,7 +17,7 @@ void exit_error(int *i)
 	t = close(*i);
 	if (t == -1)
 	{
-		dprintf(STDOUT_FILENO, "Error: Can't close fd %d", j);
+		dprintf(STDOUT_FILENO, "Error: Can't close fd %d\n", j);
 		exit(100);
 	}
 }
@@ -36,19 +36,19 @@ int main(int argc, char *args[])
 
 	if (argc != 3)
 	{
-		dprintf(STDOUT_FILENO, "Usage: cp file_from file_to");
+		dprintf(STDOUT_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	op1 = open(args[1], O_RDONLY, 0);
 	if (op1 == -1)
 	{
-		dprintf(STDOUT_FILENO, "Error: Can't read from file %s", args[1]);
+		dprintf(STDOUT_FILENO, "Error: Can't read from file %s\n", args[1]);
 		exit(98);
 	}
 	cr = creat(args[2], 0664);
 	if (cr == -1)
 	{
-		dprintf(STDOUT_FILENO, "Error: Can't write to %s", args[2]);
+		dprintf(STDOUT_FILENO, "Error: Can't write to %s\n", args[2]);
 		exit(99);
 	}
 	rd = read(op1, buf, BUFSIZ);
@@ -57,10 +57,10 @@ int main(int argc, char *args[])
 		wr = write(cr, buf, rd);
 		if (wr != rd)
 		{
-			dprintf(STDOUT_FILENO, "Error: Can't write to %s", args[2]);
+			dprintf(STDOUT_FILENO, "Error: Can't write to %s\n", args[2]);
 			exit(99);
 		}
-		rd = wr;
+		rd = read(op1, buf, BUFSIZ);
 	}
 	exit_error(&op1);
 	exit_error(&cr);
