@@ -14,7 +14,7 @@ void exit_error(int *i)
 	int t, j;
 
 	j = *i;
-	t = close(*i)
+	t = close(*i);
 	if (t == -1)
 	{
 		dprintf(STDOUT_FILENO, "Error: Can't close fd %d", j);
@@ -32,6 +32,7 @@ void exit_error(int *i)
 int main(int argc, char *args[])
 {
 	int op1, cr, wr, rd;
+	char buf[BUFSIZ];
 
 	if (argc != 3)
 	{
