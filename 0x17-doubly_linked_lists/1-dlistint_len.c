@@ -6,10 +6,10 @@
  *
  * Return: the number of nodes in th list
  */
-size_t print_dlistint_len(const dlistint_t *h)
+size_t dlistint_len(const dlistint_t *h)
 {
 	size_t rtn = 0;
-	dlistint_t *tmp;
+	const dlistint_t *tmp;
 
 	if (h != NULL)
 	{

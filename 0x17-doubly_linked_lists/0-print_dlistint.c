@@ -9,7 +9,7 @@
 size_t print_dlistint(const dlistint_t *h)
 {
 	size_t rtn = 0;
-	dlistint_t *tmp;
+	const dlistint_t *tmp;
 
 	if (h != NULL)
 	{
@@ -17,7 +17,7 @@ size_t print_dlistint(const dlistint_t *h)
 		while (tmp != NULL)
 		{
 			rtn++;
-			printf("%d", tmp->n);
+			printf("%d\n", tmp->n);
 			tmp = tmp->next;
 		}
 	}
