@@ -1,4 +1,27 @@
 #include "hash_tables.h"
+/**
+ * _strcmp - verify if two strings are same
+ * @str1: first strings
+ * @str2: second string
+ *
+ * Return: 1 if str1 and str2 are same
+ * 0 otherwize
+ */
+
+int _strcmp(const char *str1, char *str2)
+{
+	int i;
+
+	if (_strlen(str1) == _strlen(str2))
+	{
+		for (i = 0; str1[i] != '\0'; i++)
+			if (str2[i] == '\0' || (str1[i] != str2[i]))
+				return (0);
+		return (1);
+	}
+	return (0);
+	/* return (1); */
+}
 
 /**
  * hash_table_get -  retrieves a value associated with a key.
@@ -10,12 +33,22 @@
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	unsigned long int index = 0;
+	hash_node_t *node = NULL;
 
 	if (ht != NULL && ht->array != NULL && key != NULL)
 	{
-		index = hash_djb2((unsigned char *)key, ht->size);
+		index = key_index((unsigned char *)key, ht->size);
 		if (index < ht->size)
-			return (ht->array[index]->value);
+			if (ht->array[index] != NULL)
+			{
+				node = ht->array[index];
+				while (node != NULL)
+				{
+					if (_strcmp(key, node->key) == 1)
+						return (ht->array[index]->value);
+					node = node->next;
+				}
+			}
 	}
 	return (NULL);
 }
