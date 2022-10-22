@@ -12,7 +12,7 @@
 int return_size(char *s, int j)
 {
 	if (s[j] != '\0')
-		return (1 + return_size (s, (j + 1)));
+		return (1 + return_size(s, (j + 1)));
 	else
 		return (1);
 	/*return (j);*/
