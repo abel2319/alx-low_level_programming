@@ -12,10 +12,10 @@
 int return_size(char *s, int j)
 {
 	if (s[j] != '\0')
-		return (1 + return_size (s, (j + 1));
+		return (1 + return_size (s, (j + 1)));
 	else
 		return (1);
-	return (j);
+	/*return (j);*/
 }
 
 /**
@@ -29,7 +29,7 @@ int palindrome_checked(char *s, int i, int j)
 {
 	if (j > (i / 2))
 		return (1);
-	if (s[j] == s[i - j])
+	else if (s[j] == s[i - j - 1])
 		return (palindrome_checked(s, i, j + 1));
 	else
 		return (0);
@@ -41,14 +41,14 @@ int palindrome_checked(char *s, int i, int j)
  *
  * Return: 1 if it is, 0 otherwise
  */
-void is_palindrome(char *s)
+int is_palindrome(char *s)
 {
 	int i = 0;
 	int j = 0;
 
-	if (s == 0 || *s == '\0')
+	if (s == NULL || *s == '\0')
 		return (0);
 	i = return_size(s, j);
-	return (palindrome_checked(s, i, j));
+	return (palindrome_checked(s, i - 1, j));
 }
 
