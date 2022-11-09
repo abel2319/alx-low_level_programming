@@ -35,11 +35,13 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	unsigned long int index = 0;
 	hash_node_t *node = NULL;
 
-	if (ht != NULL && ht->array != NULL && key != NULL && value != NULL)
+	if (key == NULL || _strcmp(key, "") == 1)
+		return (NULL);
+	if (ht != NULL && ht->array != NULL)
 	{
 		index = key_index((unsigned char *)key, ht->size);
 		if (index < ht->size)
-			if (ht->array[index] != NULL)
+			if (ht->array[index] != NULL && ht->array[index] != 0)
 			{
 				node = ht->array[index];
 				while (node != NULL)
