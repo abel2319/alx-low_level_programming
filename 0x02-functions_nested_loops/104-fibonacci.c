@@ -24,7 +24,7 @@ int main(void)
 		f1 = f2;
 		f2 = next;
 	}
-	
+
 	f_half1 = f1 / 10000000000;
 	f_half2 = f2 / 10000000000;
 	l_half1 = f1 % 10000000000;
