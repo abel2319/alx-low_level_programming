@@ -5,12 +5,10 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned int i = 0;
-
 	if (n == 1 || n == 0)
 	{
 		_putchar('0' + n);
-		return
+		return;
 	}
 	else
 	{
