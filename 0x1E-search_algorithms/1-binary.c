@@ -4,7 +4,8 @@
 /**
  * print_array - print all elts in array
  * @array: the arrray
- * @size: size of the array
+ * @first: first index
+ * @last: last index
  *
  */
 void print_array(int *array, size_t first, size_t last)
@@ -29,7 +30,6 @@ void print_array(int *array, size_t first, size_t last)
  */
 int binary_search(int *array, size_t size, int value)
 {
-	
 	size_t first = 0;
 	size_t last = size - 1;
 	size_t middle = (first + last) / 2;
@@ -43,8 +43,7 @@ int binary_search(int *array, size_t size, int value)
 				first = middle + 1;
 			else if (array[middle] == value)
 				return (middle);
-			else
-				last = middle - 1;
+			last = middle - 1;
 			middle = (first + last) / 2;
 		}
 	}
