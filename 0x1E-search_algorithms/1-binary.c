@@ -32,7 +32,7 @@ int binary_search(int *array, size_t size, int value)
 	int *tmp = array;
 	size_t i = size;
 
-	if (array != NULL)
+	if ((array != NULL) && (size > 0) && (array[0] > value))
 	{
 		while (size > 1)
 		{
